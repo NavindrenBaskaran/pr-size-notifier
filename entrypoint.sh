@@ -6,9 +6,7 @@ require 'octokit'
 webhook_event_payload = File.read(ENV["GITHUB_EVENT_PATH"])
 webhook_event_payload_in_json = JSON.parse(webhook_event_payload)
 
-puts "Navindren #{ENV["GITHUB_TOKEN"]}"
-
-github = Octokit::Client.new(access_token: ENV["GITHUB_TOKEN"])
+github = Octokit::Client.new(access_token: "c4ccfd07929f2501a3e052aed398ba8c16df9908")
 
 most_recent_commit_hash = webhook_event_payload_in_json["after"]
 

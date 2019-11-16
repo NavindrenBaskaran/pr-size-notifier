@@ -6,7 +6,7 @@ require 'octokit'
 webhook_event_payload = File.read(ENV['GITHUB_EVENT_PATH'])
 webhook_event_payload_in_json = JSON.parse(webhook_event_payload)
 repo_name = webhook_event_payload_in_json['repository']['full_name']
-acceptable_pr_size = ENV['ACCEPTABLE_PR_SIZE'] || 10
+acceptable_pr_size = ENV['ACCEPTABLE_PR_SIZE'] || 250
 
 github = Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
 

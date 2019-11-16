@@ -16,8 +16,5 @@ current_pull_request = opened_pull_requests.select { |opened_pull_request| opene
 
 puts "current_pull_request #{current_pull_request}"
 
-unless current_pull_request.present?
-  "entered here"
-  pr_number = current_pull_request["number"]
-  github.add_comment("NavindrenBaskaran/sign_up", pr_number, "Done!")
-end
+pr_number = current_pull_request["number"]
+github.add_comment("NavindrenBaskaran/sign_up", pr_number, "Done!")

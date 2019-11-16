@@ -3,7 +3,7 @@
 require 'octokit'
 
 webhook_event_payload = File.read(ENV["GITHUB_EVENT_PATH"])
-webhook_event_payload_in_json = Json.parse(webhook_event_payload)
+webhook_event_payload_in_json = JSON.parse(webhook_event_payload)
 
 github_client = Octokit::Client.new(access_token: ENV["GITHUB_TOKEN"])
 

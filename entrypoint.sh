@@ -16,6 +16,8 @@ puts "most_recent_commit_hash #{most_recent_commit_hash}"
 
 puts "opened_pull_requests #{opened_pull_requests}"
 
+puts "opened_pull_requests #{ opened_pull_requests.map { |opened_pull_request| opened_pull_request["head"]["sha"] } }"
+
 current_pull_request = opened_pull_requests.select { |opened_pull_request| opened_pull_request["head"]["sha"] == most_recent_commit_hash }.last
 
 if current_pull_request.present?

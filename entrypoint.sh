@@ -14,7 +14,7 @@ opened_pull_requests = github.pull_requests("NavindrenBaskaran/sign_up", state: 
 
 current_pull_request = opened_pull_requests.select { |opened_pull_request| opened_pull_request["head"]["sha"] == most_recent_commit_hash.to_s }.last
 
-puts "current_pull_request #{current_pull_request}"
-
-pr_number = current_pull_request["number"]
-github.add_comment("NavindrenBaskaran/sign_up", pr_number, "Done!")
+if current_pull_request
+  pr_number = current_pull_request["number"]
+  github.add_comment("NavindrenBaskaran/sign_up", pr_number, "Done!")
+end

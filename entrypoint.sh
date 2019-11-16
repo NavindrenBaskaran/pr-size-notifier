@@ -1,4 +1,4 @@
-require 'octokit'
+# require 'octokit'
 
 webhook_event_payload = ENV["GITHUB_EVENT_PATH"]
 

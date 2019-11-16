@@ -16,5 +16,5 @@ current_pull_request = opened_pull_requests.select { |opened_pull_request| opene
 
 if current_pull_request
   pr_number = current_pull_request["number"]
-  github.add_comment("NavindrenBaskaran/sign_up", pr_number, "Done!")
+  github.add_comment("NavindrenBaskaran/sign_up", pr_number, "This pull request is big. We prefer smaller PRs whenever possible, as they are easier to review. Can this be split into a few smaller PRs?")
 end

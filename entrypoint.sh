@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+require 'json'
 require 'octokit'
 
 webhook_event_payload = File.read(ENV["GITHUB_EVENT_PATH"])

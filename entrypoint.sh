@@ -1,7 +1,7 @@
-#!/bin/sh -l
+# #!/bin/sh -l
 
-echo "Hello $1"
-time=$(date)
-echo ::set-output name=time::$time
+# echo "Hello $1"
+# time=$(date)
+# echo ::set-output name=time::$time
 
 puts "hi"

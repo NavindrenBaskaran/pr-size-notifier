@@ -6,6 +6,8 @@ require 'octokit'
 webhook_event_payload = File.read(ENV["GITHUB_EVENT_PATH"])
 webhook_event_payload_in_json = JSON.parse(webhook_event_payload)
 
+puts "Navin #{ENV}"
+
 github = Octokit::Client.new(access_token: ENV["GITHUB_TOKEN"])
 
 most_recent_commit_hash = webhook_event_payload_in_json["after"]

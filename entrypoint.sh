@@ -3,10 +3,11 @@
 require 'octokit'
 
 webhook_event_payload = File.read(ENV["GITHUB_EVENT_PATH"])
+webhook_event_payload_in_json = Json.parse(webhook_event_payload)
 
 github_client = Octokit::Client.new(access_token: ENV["GITHUB_TOKEN"])
 
-most_recent_commit_hash = webhook_event_payload["after"]
+most_recent_commit_hash = webhook_event_payload_in_json["after"]
 
 puts most_recent_commit_hash
 

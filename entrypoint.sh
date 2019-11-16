@@ -12,7 +12,9 @@ most_recent_commit_hash = webhook_event_payload_in_json["after"]
 
 opened_pull_requests = github.pull_requests("NavindrenBaskaran/sign_up", state: 'open')
 
-puts "opened_pull_requests #{opened_pull_requests.count}"
+puts "most_recent_commit_hash #{most_recent_commit_hash}"
+
+puts "opened_pull_requests #{opened_pull_requests}"
 
 current_pull_request = opened_pull_requests.select { |opened_pull_request| opened_pull_request["head"]["sha"] == most_recent_commit_hash }.last
 

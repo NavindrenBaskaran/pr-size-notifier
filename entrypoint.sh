@@ -7,7 +7,7 @@ webhook_event_payload = File.read(ENV["GITHUB_EVENT_PATH"])
 webhook_event_payload_in_json = JSON.parse(webhook_event_payload)
 repo_name = webhook_event_payload_in_json["head"]
 
-puts repo_name
+puts webhook_event_payload_in_json
 
 acceptable_pr_size = ENV["ACCEPTABLE_PR_SIZE"] || 10
 

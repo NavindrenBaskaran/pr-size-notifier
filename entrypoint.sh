@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-webhook_event_payload = ENV["GITHUB_EVENT_PATH"]
+webhook_event_payload = File.read(ENV["GITHUB_EVENT_PATH"])
 
 # # github_client = Octokit::Client.new(access_token: ENV["GITHUB_TOKEN"])
 

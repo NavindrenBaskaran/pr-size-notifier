@@ -5,7 +5,9 @@ require 'octokit'
 
 webhook_event_payload = File.read(ENV["GITHUB_EVENT_PATH"])
 webhook_event_payload_in_json = JSON.parse(webhook_event_payload)
-repo_name = webhook_event_payload_in_json["head"]["repo"]["full_name"]
+repo_name = webhook_event_payload_in_json["head"]
+
+puts repo_name
 
 acceptable_pr_size = ENV["ACCEPTABLE_PR_SIZE"] || 10
 

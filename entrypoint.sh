@@ -10,7 +10,7 @@ github_client = Octokit::Client.new(access_token: ENV["GITHUB_TOKEN"])
 
 most_recent_commit_hash = webhook_event_payload_in_json["after"]
 
-opened_pull_requests = github_client.pull_requests("NavindrenBaskaran/sign_up", state: 'closed')
+opened_pull_requests = github_client.pull_requests("NavindrenBaskaran/sign_up", state: 'open')
 
 current_pull_request = opened_pull_requests.select { |opened_pull_request| opened_pull_request["head"]["sha"] == most_recent_commit_hash }.last
 
